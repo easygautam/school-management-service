@@ -12,7 +12,7 @@ import { JwtAuthGuard } from './guard/jwt-auth.guard';
   imports: [
     JwtModule.register({
       secret: JWTConstants.secretKey,
-      signOptions: { expiresIn: '60m' },
+      signOptions: { expiresIn: '60d' },
     }),
   ],
   exports: [JwtModule],

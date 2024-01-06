@@ -18,8 +18,8 @@ export class AuthService {
     // Check user is valid
     let user = await this.userService.getUserByMobile(login.mobile);
     if (
-      !user &&
-      user.mobile !== login.mobile &&
+      !user ||
+      user.mobile !== login.mobile ||
       user.password !== login.password
     ) {
       throw new ForbiddenException('Invalid credential');
